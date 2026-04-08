@@ -1,5 +1,4 @@
-package com.agileoracleseval;
-//package org.example.fromabdullahalhadabi;
+package com.agileoracleseval.slitheringeval.AbdullahAlhadabi;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -109,8 +108,8 @@ public class slitheringcodechallenge {
 
 
     static LinkedList<int[]> bulidSnake(char[][] grid) {
-        Set<String> sankeCells = new LinkedHashSet<>();
-        Map<String, int[]> coorMap = new HashMap<>();
+        Set<String> sankeCells = new LinkedHashSet<>(); // Scanes every pos in the grid
+        Map<String, int[]> coorMap = new HashMap<>(); // for fast lockup
 
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[r].length; c++) {
@@ -123,6 +122,7 @@ public class slitheringcodechallenge {
         }
 
         if (sankeCells.isEmpty()) {
+
             return new LinkedList<>();
         }
         if (sankeCells.size() == 1) {
@@ -175,7 +175,7 @@ public class slitheringcodechallenge {
 
 
     static void showOpenDirections(LinkedList<int[]> snake,int totalRows, int totalCols) {
-        int[] head = snake.getLast();
+        int[] head = snake.getLast(); // unput the head and the tail
         int[] tail = snake.getFirst();
 
         Set<String> body = new HashSet<String>();
@@ -206,7 +206,7 @@ public class slitheringcodechallenge {
                     msg.append(i == openDirs.size() - 1 ? " and " : ", ");
 
                 }
-                msg.append(openDirs.get(i));
+                msg.append(openDirs.get(i)); // append is used in Sttring bulider for adding anything
             }
             System.out.println(msg.toString());
         }
@@ -221,10 +221,10 @@ public class slitheringcodechallenge {
             saveMap(freshGrid);
             return freshGrid;
         }
-        try (Scanner sc = new Scanner(mapFile)) {
+        try (Scanner sc = new Scanner(mapFile)) { // open the file to read
             List<char[]> rows = new ArrayList<>();
 
-            while (sc.hasNextLine()) {
+            while (sc.hasNextLine()) { // read line by line ( while mean when there is a oline read
                 String line = sc.nextLine().trim();
                 if (line.isEmpty()) continue;
 
