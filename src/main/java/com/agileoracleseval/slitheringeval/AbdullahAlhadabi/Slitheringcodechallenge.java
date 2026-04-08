@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Arrays;
 
-public class slitheringcodechallenge {
+public class Slitheringcodechallenge {
 
     static final String Map_FILE = "./map.txt";
     static final char EMPTY = '-';
